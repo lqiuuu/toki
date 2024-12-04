@@ -1,23 +1,29 @@
-I
+i
 me
 my
 mine
 us
 our
+ours
 you
+your
+yours
 he
-his
 him
+his
 she
 her
+hers
 they
 them
+their
 it
+its
 be
 good
 simple
-to improve
-to fix
+improve
+fix
 bad
 evil
 complex
@@ -65,8 +71,8 @@ male
 masculine
 husband
 food
-to eat
-(specifies an object)
+eat
+drink
 thing
 object
 tool
@@ -76,19 +82,19 @@ book
 document
 paper
 eye
-to look
-to see
-to seek to
+look
+see
+seek to
 love
 compassion
 affection
-to do
-to work
-to make
+do
+work
+make
 labor
-to give
-to send
-to emit
+give
+send
+emit
 water
 fluid
 to water
@@ -137,7 +143,9 @@ continue
 and (combines subjects)
 sound
 noise
-to read/make sound
+to read
+read
+make sound
 group
 community
 society
@@ -176,6 +184,11 @@ reason
 to
 for
 moving
+move
+motion
+go
+leaving
+leave
 from persp. of
 up
 above
@@ -203,7 +216,7 @@ or
 (any animal sound)
 (addressing people
 commands)
-what? (for questions)
+what
 listen
 hear
 obey
@@ -225,6 +238,7 @@ contents
 center
 stomach
 color
+colors
 colorful
 yellow (and its shades)
 blue
@@ -245,8 +259,9 @@ death
 dying
 sex
 sexual
-"of" (regroups adjectives/adverbs)
-"if/when" (introduces context)
+of
+if
+when
 hand
 arm
 long flexible object
@@ -285,7 +300,8 @@ end
 finish
 close
 knowledge
-to know (how to)
+to know
+know
 want
 need
 desire
@@ -303,9 +319,12 @@ bump,nose
 time
 moment
 one
-part (of smth)
+1
+part
+part of
 united
 two
+2
 divide
 divided
 circle
@@ -322,7 +341,6 @@ moon
 star
 night sky object
 number
-(ordinal indicator)
 box
 container
 bowl

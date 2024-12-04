@@ -1,6 +1,7 @@
 import nlp from "compromise";
 import * as fs from 'fs';
 
+
 //simplifier lexicon
 // const allowedWords = [
 //     "I", "you", "we", "it", "good", "bad", "happy", "sad", "eat", "drink", 
@@ -9,7 +10,7 @@ import * as fs from 'fs';
 const allowedWords = fs.readFileSync('lexicon/words.txt').toString().split('\n')
 
 //filter
-const stopWords = ["the", "and", "of", "is", "are", "in", "on", "under", "for", "with", "a", "an", "over"];
+const stopWords = ["the", "and", "of", "is", "are", "in", "on", "under", "for", "with", "a", "an", "over", "as", "if", "into"];
 
   
   // check if word is in lexicon
@@ -37,12 +38,26 @@ const wordToPhrase = JSON.parse(fs.readFileSync('lexicon/essence.json'));
 // const essence = await fetch("essence.json");
 // const wordToPhrase = await essence.json();
   
+// function preCookSentence(sentence){
+//     let doc = nlp(sentence);
+//     doc.nouns().toSingular();
+//     doc.verbs().toInfinitive();
+
+//     // return doc.text();
+// }
 
   // replace complex word with simple vocab
   function simplifyWithDescriptions(sentence) {
-    let doc = nlp(sentence).sentences().toInfinitive();
-    console.log("original: " + doc.text());
+    // let doc = nlp(sentence).sentences().toInfinitive();
+    // console.log("original: " + doc.text());
   
+    // let doc = preCookSentence(sentence);
+    let doc = nlp(sentence);
+    doc.nouns().toSingular();
+    doc.verbs().toInfinitive();
+
+    console.log("plain: " + doc.text());
+
     // check word by word
     doc.terms().forEach(term => {
       const word = term.text();
@@ -57,6 +72,7 @@ const wordToPhrase = JSON.parse(fs.readFileSync('lexicon/essence.json'));
 
         else if (!isAllowed(word)) {
         // if not in lexicon(tense sensitive), not filtered and not in mapping
+        fs.writeFileSync('lexicon/unknown.txt', word, 'utf8');
         term.replaceWith("[unknown]");
       }
     }
@@ -67,7 +83,10 @@ const wordToPhrase = JSON.parse(fs.readFileSync('lexicon/essence.json'));
   }
   
   // use
-  const sentence = "The beautiful bird flew over the vast ocean.";
-  const simplified = simplifyWithDescriptions(sentence);
-  console.log(simplified); // export: "The good sky animal flew over the big water."
+//   const sentence = "The beautiful bird flew over the vast ocean, knowing it was the best in the world. Fasinating!";
+const sentence = "I don't want to go to school."
+console.log("original: " + sentence);
+const simplified = simplifyWithDescriptions(sentence);
+  console.log("simplified: " + simplified); // export: "The good sky animal flew over the big water."
 //   console.log(verbs().toPresentTense)
+//   console.log("to know".sentences().toInfinitive());
